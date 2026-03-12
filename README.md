@@ -1,2 +1,2 @@
-# Archon
+# Specter
 An open framework for agentic, spec-driven development.
