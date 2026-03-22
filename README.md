@@ -64,53 +64,34 @@ Hand each task to an agent. Tasks are self-contained — each includes its goal,
 
 ## Installation
 
-Spec'd installs globally so the same skills are available across all your projects.
+Clone the repo and run the install script. It auto-detects your installed tools and sets everything up.
 
 ```bash
-mkdir -p ~/.specd
-curl -o ~/.specd/define-requirements.md https://raw.githubusercontent.com/MohamedAtta-AI/specd/main/define-requirements.md
-curl -o ~/.specd/create-spec.md https://raw.githubusercontent.com/MohamedAtta-AI/specd/main/create-spec.md
-curl -o ~/.specd/standards.md https://raw.githubusercontent.com/MohamedAtta-AI/specd/main/standards.md
+git clone https://github.com/MohamedAtta-AI/specd.git
+cd specd
+bash install.sh
 ```
 
-Or clone and symlink:
+To install for specific tools only:
 
 ```bash
-git clone https://github.com/MohamedAtta-AI/specd.git ~/.specd
+bash install.sh --claude        # Claude Code
+bash install.sh --codex         # Codex CLI
+bash install.sh --antigravity   # Antigravity
+bash install.sh --cursor        # Cursor
+bash install.sh --all           # All of the above
 ```
 
-### Wiring up per tool
+### What the installer does
 
-**Claude Code**
+| Tool | Where skills are installed | How to invoke |
+|---|---|---|
+| **Claude Code** | `~/.claude/commands/` | `/define-requirements`, `/create-spec` |
+| **Codex CLI** | `~/.codex/skills/` | Agent triggers from description |
+| **Antigravity** | `~/.gemini/antigravity/skills/` | Agent triggers from description |
+| **Cursor** | `~/.cursor/rules/` | Agent triggers from description |
 
-Add to your global `~/.claude/CLAUDE.md`:
-
-```markdown
-## Skills
-
-When the user runs define-requirements, read and follow ~/.specd/define-requirements.md.
-When the user runs create-spec, read and follow ~/.specd/create-spec.md.
-```
-
-Or register as slash commands by placing the skill files in `~/.claude/commands/`:
-
-```bash
-ln -s ~/.specd/define-requirements.md ~/.claude/commands/define-requirements.md
-ln -s ~/.specd/create-spec.md ~/.claude/commands/create-spec.md
-```
-
-**Cursor**
-
-Add to your global Cursor rules (`.cursor/rules/specd.mdc`):
-
-```
-When the user asks to define requirements, read and follow ~/.specd/define-requirements.md.
-When the user asks to create a spec, read and follow ~/.specd/create-spec.md.
-```
-
-**Other agents**
-
-Point the agent at `~/.specd/` as its skills directory, or paste the relevant skill file content into the agent's system prompt or context window.
+The global default `standards.md` is always installed to `~/.specd/standards.md` regardless of which tools you select.
 
 ---
 
