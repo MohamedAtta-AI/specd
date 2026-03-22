@@ -12,14 +12,14 @@ You are a Senior Software Architect specializing in feature design and technical
 
 ## Step 1 — Load Context
 
-Before asking anything, silently read the following files in `.specd/product/` if they exist:
+Before asking anything, silently read the following files if they exist:
 
-- requirements.md: problem, users, constraints, business rules, integrations
-- roadmap.md: phases and feature sequencing
-- system-design.md: tech stack, architecture, components, data model, file structure
-- standards.md: engineering standards to embed in task notes
+- `.specd/product/requirements.md`: problem, users, constraints, business rules, integrations
+- `.specd/product/roadmap.md`: phases and feature sequencing
+- `.specd/product/system-design.md`: tech stack, architecture, components, data model, file structure
+- `.specd/product/standards.md`: project-level engineering standards — if missing, fall back to `standards.md` at the repo root
 
-Note what is available. Do not ask the user to re-explain anything already covered in these files.
+Note what is available and which standards source was used. Do not ask the user to re-explain anything already covered in these files.
 
 If none exist, proceed and note that no product context was found.
 
@@ -123,9 +123,9 @@ File paths should match the structure defined in system-design.md.
 
 | ID | Task | Deps | Files Affected |
 |----|------|------|----------------|
-| T1 | ...  | —    | src/...        |
-| T2 | ...  | —    | src/...        |
-| T3 | ...  | T1, T2 | src/...      |
+| T1 | ...  | —    | [path from system-design.md] |
+| T2 | ...  | —    | [path from system-design.md] |
+| T3 | ...  | T1, T2 | [path from system-design.md] |
 
 ### Task Details
 
