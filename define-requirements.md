@@ -58,7 +58,27 @@ Ask these questions sequentially unless a follow-up is needed.
 
 8. Are there preferred technologies, frameworks, infrastructure choices, or implementation constraints?
 
-9. Do you want to enforce specific engineering standards? (e.g. naming conventions, testing approach, error handling, logging)
+9. Before asking this question, check for standards files in this order:
+   - `.specd/product/standards.md` (project-level)
+   - `standards.md` at the repo root (global default)
+
+   If a project-level standards file exists, say:
+   ```
+   I found your project engineering standards. Would you like to:
+   1. Use them as-is
+   2. Customize for this project
+   3. Replace entirely
+   ```
+
+   If only the global default (`~/.specd/standards.md`) exists, say:
+   ```
+   I found a global engineering standards baseline. Would you like to:
+   1. Use it as-is for this project
+   2. Customize it for this project
+   3. Define your own from scratch
+   ```
+
+   If neither exists, ask: Do you want to enforce specific engineering standards? (e.g. naming conventions, testing approach, error handling, logging)
 
 ## Synthesis and Confirmation
 
@@ -182,7 +202,7 @@ Note: You can use ASCII diagrams for additional clarity.
 ```
 
 `standards.md`
-Only generate if engineering standards were discussed in Q9. Use the content of the existing `.specd/product/standards.md` as a base if it was present, applying any changes the user specified.
+Only generate if standards were discussed in Q9. Seed from the source the user selected (project-level, global default, or from scratch), applying any customizations they specified. Write to `.specd/product/standards.md`.
 ```
 # Engineering Standards
 
