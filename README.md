@@ -23,14 +23,6 @@ The skills are plain markdown files. They work with any agent tool that can read
 
 ## How It Works
 
-```
-define-requirements          create-spec               implement
-─────────────────────        ──────────────────        ─────────────────────
-Ask 9 focused questions  →   Load product context  →   Agents work from
-Synthesize & confirm     →   Define the feature    →   self-contained specs
-Write product docs       →   Write spec + tasks    →   in parallel
-```
-
 **Step 1 — Define your product** with `define-requirements`
 
 A guided session that collects your problem, users, goals, constraints, tech stack, and standards. It synthesizes key use cases, proposes an MVP, and generates:
@@ -112,17 +104,8 @@ your-project/
             ├── spec.md
             └── refs/                 ← wireframes, API docs, schemas
 ```
-
 ---
 
-## Engineering Standards
+## 📄 License
 
-`~/.specd/standards.md` is the global default — a baseline covering general principles, architecture, naming, error handling, security, API design, testing, and more. It ships with Spec'd and is meant to be a solid starting point.
-
-When you run `define-requirements`, you can use the global default as-is, customize it for the project, or define your own from scratch. The result is written to `.specd/product/standards.md` as a project-level override. Skills always check project-level first and fall back to the global default.
-
----
-
-## License
-
-[Apache 2.0](LICENSE)
+This project is licensed under the terms of the [Apache 2.0](https://github.com/MohamedAtta-AI/specd/blob/main/LICENSE) open source license.
