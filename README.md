@@ -1,5 +1,7 @@
 # Spec'd ⚡
 
+⚠️ Work in progress
+
 <p align="center">
   <img src="assets/chad_specs.jpg" alt="Get Spec'd. Get Shit Done." width="700"/>
 </p>
