@@ -70,7 +70,7 @@ Ask these questions sequentially unless a follow-up is needed.
    3. Replace entirely
    ```
 
-   If only the global default exists, say:
+   If only the global default (`~/.specd/standards.md`) exists, say:
    ```
    I found a global engineering standards baseline. Would you like to:
    1. Use it as-is for this project

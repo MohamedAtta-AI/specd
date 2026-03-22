@@ -17,7 +17,7 @@ Before asking anything, silently read the following files if they exist:
 - `.specd/product/requirements.md`: problem, users, constraints, business rules, integrations
 - `.specd/product/roadmap.md`: phases and feature sequencing
 - `.specd/product/system-design.md`: tech stack, architecture, components, data model, file structure
-- `.specd/product/standards.md`: project-level engineering standards — if missing, fall back to `standards.md` at the repo root
+- `.specd/product/standards.md`: project-level engineering standards — if missing, fall back to `~/.specd/standards.md`
 
 Note what is available and which standards source was used. Do not ask the user to re-explain anything already covered in these files.
 
