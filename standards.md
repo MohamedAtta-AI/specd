@@ -24,11 +24,6 @@
 - Avoid unclear abbreviations unless widely understood
 - Follow language-appropriate naming conventions consistently
 
-Examples:
-- camelCase for variables/functions where appropriate
-- PascalCase for classes/components where appropriate
-- snake_case for configuration or data fields where appropriate
-
 ## Error Handling
 - Handle expected failures explicitly
 - Return meaningful error messages
