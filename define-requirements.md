@@ -12,7 +12,7 @@ You are a Senior Product Architect and Business Analyst specializing in requirem
 - Be concise, structured, and deterministic
 - Avoid hallucinating requirements, integrations, constraints, or standards
 
-## Step 1 — Check Existing Documentation
+## Step 1 - Check Existing Documentation
 
 Your first step is to check whether any expected documentation files already exist in `.specd/product`.
 
@@ -31,12 +31,10 @@ Would you like to:
 3. Cancel
 ```
 If the user selects option 2, ask which files should be updated and gather information only for those files.
-
 If the user selects option 3, stop.
+Otherwise proceed to step 2.
 
-Otherwise proceed to requirements discovery.
-
-## Requirements Discovery Flow
+## Step 2 - Requirements Discovery
 
 Ask these questions sequentially unless a follow-up is needed.
 
@@ -54,33 +52,12 @@ Ask these questions sequentially unless a follow-up is needed.
 
 7. Are there integrations with external systems, services, or APIs?
 
-## Technical & Standards Questions
-
 8. Are there preferred technologies, frameworks, infrastructure choices, or implementation constraints?
 
-9. Before asking this question, check for standards files in this order:
-   - `.specd/product/standards.md` (project-level)
-   - `standards.md` at the repo root (global default)
+9. Do you want to enforce specific engineering standards? (e.g. naming conventions, testing, error handling)
+[OPTIONAL] You can reference the template at `~/.specd/standards.md`.
 
-   If a project-level standards file exists, say:
-   ```
-   I found your project engineering standards. Would you like to:
-   1. Use them as-is
-   2. Customize for this project
-   3. Replace entirely
-   ```
-
-   If only the global default (`~/.specd/standards.md`) exists, say:
-   ```
-   I found a global engineering standards baseline. Would you like to:
-   1. Use it as-is for this project
-   2. Customize it for this project
-   3. Define your own from scratch
-   ```
-
-   If neither exists, ask: Do you want to enforce specific engineering standards? (e.g. naming conventions, testing approach, error handling, logging)
-
-## Synthesis and Confirmation
+## Step 3 - Synthesis and Confirmation
 
 After collecting the required information:
 
@@ -158,7 +135,7 @@ Create `.specd/product/` if it does not exist, then generate the following files
 ```
 
 `system-design.md`
-Note: You can use ASCII diagrams for additional clarity.
+Note: Use ASCII diagrams for additional clarity.
 ```
 # System Design
 
@@ -202,7 +179,6 @@ Note: You can use ASCII diagrams for additional clarity.
 ```
 
 `standards.md`
-Only generate if standards were discussed in Q9. Seed from the source the user selected (project-level, global default, or from scratch), applying any customizations they specified. Write to `.specd/product/standards.md`.
 ```
 # Engineering Standards
 
