@@ -17,19 +17,31 @@
 
 Spec'd is a set of AI agent skills for spec-first development. Instead of jumping straight to code, you run a short guided session that produces structured documentation — requirements, a roadmap, system design, and engineering standards. When you're ready to build a feature, a second skill turns that context into a precise, self-contained spec with interfaces and atomic tasks that agents can execute in parallel.
 
-The skills are plain markdown files. They work with any agent tool that can read files and interact with users — Claude Code, Cursor, Codex, or any similar tool.
+The skills are plain markdown files. They work with any agent tool that can read files and interact with users — Claude Code, Cursor, Codex, etc.
+
+### The Core Phillosophy
+
+Spec’d is designed with these principles in mind:
+
+1. **Structured yet flexible requirements definition**:
+   Establish a guided process for requirements elicitation and feature iteration, aligned with best practices from the Software Development Lifecycle (SDLC), while remaining adaptable to evolving product understanding.
+
+2. **Maximized developer–agent alignment**:
+   Unlike conventional frameworks, Spec’d does not assume users can fully articulate requirements upfront. Instead, it enforces an initial phase of targeted questioning and controlled recommendations, reducing ambiguity early. This improves alignment, preserves context efficiency, and enhances both agent performance and creative output.
+
+3. **Minimized token overhead**:
+   Rather than generating verbose, document-style outputs, Spec’d prioritizes concise, high-signal context optimized for agent execution. Formal documentation is treated as a downstream artifact, derived from the refined, structured knowledge produced by the framework.
+
+4. **Upfront engineering alignment and parallel execution**:
+  Following requirements elicitation, each feature is concretely defined with explicit contracts and interface boundaries. This enables safe parallelization across subagents, minimizing conflicts and rework. The process also yields high-quality engineering artifacts that support implementation, coordination, and future maintenance while discouraging vibe coding.
+
+[Process Diagram here]
+
+### The Vision
 
 ---
 
 ## How It Works
-
-```
-define-requirements          create-spec               implement
-─────────────────────        ──────────────────        ─────────────────────
-Ask 9 focused questions  →   Load product context  →   Agents work from
-Synthesize & confirm     →   Define the feature    →   self-contained specs
-Write product docs       →   Write spec + tasks    →   in parallel
-```
 
 **Step 1 — Define your product** with `define-requirements`
 
@@ -112,17 +124,8 @@ your-project/
             ├── spec.md
             └── refs/                 ← wireframes, API docs, schemas
 ```
-
 ---
 
-## Engineering Standards
+## 📄 License
 
-`~/.specd/standards.md` is the global default — a baseline covering general principles, architecture, naming, error handling, security, API design, testing, and more. It ships with Spec'd and is meant to be a solid starting point.
-
-When you run `define-requirements`, you can use the global default as-is, customize it for the project, or define your own from scratch. The result is written to `.specd/product/standards.md` as a project-level override. Skills always check project-level first and fall back to the global default.
-
----
-
-## License
-
-[Apache 2.0](LICENSE)
+This project is licensed under the terms of the [Apache 2.0](https://github.com/MohamedAtta-AI/specd/blob/main/LICENSE) open source license.
