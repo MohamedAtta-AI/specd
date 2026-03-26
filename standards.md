@@ -23,12 +23,12 @@
 
 ## Error Handling & Validation
 - Handle expected failures explicitly; avoid silent failures
-- Return meaningful error messages with enough context for diagnosis
+- Implement registeries for mapping all errors to codes with meaningful messages for diagnosis
 - Validate and sanitize all external inputs at system boundaries; reject malformed data early
 - Enforce schema or contract validation where applicable
 
 ## Secrets & Security
-- Never hardcode secrets, tokens, or credentials — use environment variables or a secrets manager
+- Never hardcode secrets, tokens, or credentials. Use environment variables or a secrets manager
 - Do not log sensitive data (PII, tokens, passwords)
 - Apply least-privilege to service accounts and API keys
 - Use HTTPS; verify TLS in outbound HTTP clients
@@ -42,7 +42,6 @@
 
 ## Logging & Observability
 - Log important system events and failures with structured output
-- Avoid logging sensitive data
 - Include enough context in log entries for diagnosis
 
 ## Testing
