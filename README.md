@@ -19,7 +19,7 @@ Spec'd is a set of AI agent skills for spec-first development. Instead of jumpin
 
 The skills are plain markdown files. They work with any agent tool that can read files and interact with users — Claude Code, Cursor, Codex, etc.
 
-## The Core Phillosophy
+### The Core Phillosophy
 
 Spec’d is designed with these principles in mind:
 
