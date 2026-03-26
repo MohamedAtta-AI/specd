@@ -35,6 +35,10 @@ Spec’d is designed with these principles in mind:
 4. **Upfront engineering alignment and parallel execution**:
   Following requirements elicitation, each feature is concretely defined with explicit contracts and interface boundaries. This enables safe parallelization across subagents, minimizing conflicts and rework. The process also yields high-quality engineering artifacts that support implementation, coordination, and future maintenance while discouraging vibe coding.
 
+[Process Diagram here]
+
+### The Vision
+
 ---
 
 ## How It Works
